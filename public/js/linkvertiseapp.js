@@ -5,7 +5,7 @@ async function getRequest(){
     //const baseURL = "https://api.binderbyte.com/v1/track?api_key=7cf7a054e04466fe6a8114da4badecefb7de09a32e89485492ebe412aea6f97e";
     //const response = await fetch(baseURL + "&courier=" + courier + "&awb=" + receipt, {method: "GET"})
     const baseURL = "https://ancient-dew-2472.fly.dev/api?url";
-    const response = await fetch(jenis + link, {method: "GET"})
+    const response = await fetch(jenis+link, {method: "GET"})
     const json = await response.json();
     return json;
 }
@@ -13,7 +13,7 @@ async function getRequest(){
 async function tracking(){
     const json = await getRequest();
 
-    if(json.data.success == true){
+    if(json.status == 200){
         let informasiHTML = `
         <div class="grid row-gap-8 lg:grid-cols-4">
             <div class="grid lg:col-span-2">
